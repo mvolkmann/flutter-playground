@@ -55,6 +55,7 @@ class MyPage extends StatelessWidget {
           Text('before'),
           Greet(name: 'Mark'),
           Text('after'),
+          Counter(),
         ]),
       ),
     );
@@ -82,5 +83,35 @@ class Greet extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(10),
     );
+  }
+}
+
+class Counter extends StatefulWidget {
+  const Counter({Key? key}) : super(key: key);
+
+  @override
+  _CounterState createState() => _CounterState();
+}
+
+class _CounterState extends State<Counter> {
+  int count = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      ElevatedButton(
+        child: const Text('Decrement'),
+        onPressed: () => setState(() => count -= 1),
+      ),
+      Text("$count"),
+      ElevatedButton(
+        child: const Text('Increment'),
+        onPressed: () => setState(() => count += 1),
+      ),
+      ElevatedButton(
+        child: const Text('Reset'),
+        onPressed: () => setState(() => count = 0),
+      ),
+    ]);
   }
 }
