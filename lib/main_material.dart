@@ -47,40 +47,16 @@ class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My App'),
-      ),
-      body: Center(
-        child: Column(children: const [
-          Text('before'),
-          Greet(name: 'Mark'),
-          Text('after'),
-        ]),
-      ),
-    );
-  }
-}
-
-class Greet extends StatelessWidget {
-  final String name;
-
-  const Greet({Key? key, required this.name}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        'Hello, $name!',
-        style: const TextStyle(
-          color: Colors.red,
-          fontWeight: FontWeight.bold,
+        appBar: AppBar(
+          title: const Text('My App'),
         ),
-      ),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.orange, width: 3),
-        color: Colors.yellow,
-      ),
-      padding: const EdgeInsets.all(10),
-    );
+        body: const Center(
+            child: Text('Hello, World!',
+                style: TextStyle(
+                    backgroundColor: Colors.yellow,
+                    color: Colors.red,
+                    fontFamily: 'Corinthia',
+                    fontSize: 64,
+                    fontWeight: FontWeight.bold))));
   }
 }
